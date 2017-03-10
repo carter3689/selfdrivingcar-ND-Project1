@@ -1,0 +1,44 @@
+#**Finding Lane Lines on the Road** 
+
+##Writeup Template
+
+###You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+
+---
+
+**Finding Lane Lines on the Road**
+
+The goals / steps of this project are the following:
+* Make a pipeline that finds lane lines on the road
+* Reflect on your work in a written report
+
+
+[//]: # (Image References)
+
+[image1]: ./examples/grayscale.jpg "Grayscale"
+
+---
+
+### Reflection
+
+###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+
+My pipeline consisted of 5 steps. As I applied each of the helper functions I then displayed the results so that the effects could easily be seen throughout the process. The first step was to grayscale the images using the grayscale helper function and applying a cmap which is equal to 'gray'. To help with the rest of the process, i placed the variables into a different cell, so that I could make changes easier. I then applied grassian_blur,region_of_interest,hough_lines and finished the process with weighted image. As the transformation took shape I became a bit worried that I was going down a different path, but realized that the weighted image function produced the output I was looking for. 
+
+As it turns out, I had difficulty using and making changes to the draw_lines() function. I searched the forums for some pointers and tried different solutions, but each time I received an error. 
+
+If you'd like to include images to show how the pipeline works, here is how to include an image: 
+
+![alt text][image1]
+
+
+###2. Identify potential shortcomings with your current pipeline
+
+
+One potential shortcoming would be what would happen when I attempted to add/extrapolate the lane lines in my pipeline. I couldn't quite understand where to use draw_line and may need to do more research on a better solution.
+
+
+
+###3. Suggest possible improvements to your pipeline
+
+A possible improvement would be to add extrapolation to my pipeline. I saw that the lanes could be detected on my test videos, which is a success for me. However, I know that my lines are a bit to big currently, I believe the draw_lines function is supposed to help narrow that. I would have liked to gain a better grasp on how to effectively draw the correct lines with slope, I just wasn't sure where to place the code. I even tried using the hough_transform results as the "lines" being asked for in the draw_lines function to no avail (received an error stating that I needed 4 inputs and only provided three when using hough results as the lines parameter.
